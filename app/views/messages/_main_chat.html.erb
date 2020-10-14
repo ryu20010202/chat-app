@@ -1,7 +1,7 @@
 <div class="header-c">
   <div class="left-header">
     <div class="header-title">
-      hogefuga
+      <%= @room.name %>
     </div>
   </div>
   <div class="right-header">
@@ -12,21 +12,7 @@
 </div>
 
 <div class="screen">
-  <div class="messages">
-    <div class="content-user">
-      <div class="user-name">
-        Tom
-      </div>
-      <div class="content-time">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="message">
-      <div class="content-message">
-        おはよう
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'message',  collection: @messages %>
 </div>
 
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
